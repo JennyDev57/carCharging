@@ -41,7 +41,7 @@ function authenticateToken(req: any, res: any, next: any) {
 
 			delete decodeRefreshToken.iat;
 			delete decodeRefreshToken.exp;
-			const accessToken = generateAccessToken(decodeRefreshToken, "1h");
+			const accessToken = generateAccessToken(decodeRefreshToken, 60);
 
 			res.cookie("refreshToken", refreshToken, {
 				httpOnly: true,
