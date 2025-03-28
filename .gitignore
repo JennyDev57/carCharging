@@ -1,0 +1,9 @@
+API/node_modules/
+API/package-lock.json
+API/yarn.lock
+
+FRONT/node_modules/
+FRONT/package-lock.json
+FRONT/yarn.lock
+
+*.code-workspace

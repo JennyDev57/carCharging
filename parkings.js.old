@@ -1,0 +1,215 @@
+const express = require("express");
+const router = express.Router();
+
+const parkings = require("./parkingsDB.json");
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Parking:
+ *       type: object
+ *       required:
+ *         - name
+ *         - type
+ *         - city
+ *       properties:
+ *         id:
+ *           type: number
+ *           description: The auto-generated id of the parking
+ *         name:
+ *           type: string
+ *           description: The name of the parking
+ *         type:
+ *           type: string
+ *           enum: [AIRPORT]
+ *           description:
+ *         city:
+ *           type: string
+ *           description:
+ *       example:
+ *         id: 1
+ *         name: Parking 1
+ *         type: AIRPORT
+ *         city: LILLE
+ */
+
+/**
+ * @openapi
+ * tags:
+ *   name: Parkings
+ *   description: The parkings managing API
+ * /parkings:
+ *   get:
+ *     tags: [Parkings]
+ *     summary: Lists all the parkings
+ *     description:
+ *     responses:
+ *       200:
+ *         description: The list of the parkings
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Parking'
+ */
+router.get("/parkings", (req, res) => {
+	// return res.status(200).json(parkings)
+
+	res.send(res.json(parkings));
+});
+
+/**
+ * @openapi
+ * /parkings/{id}:
+ *   get:
+ *     tags: [Parkings]
+ *     summary: Get the parking by id
+ *     description:
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: number
+ *         required: true
+ *         description: The parking id
+ *     responses:
+ *       200:
+ *         description: The parking response by id
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Parking'
+ */
+router.get("/parkings/:id", (req, res) => {
+	const id = parseInt(req.params.id);
+	const parking = parkings.find((parking) => parking.id === id);
+	res.status(200).json(parking);
+});
+
+/**
+ * @openapi
+ * /parkings:
+ *   post:
+ *     tags: [Parkings]
+ *     summary: Create a new parking
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               id:
+ *                 type: string
+ *                 description: The parking's name.
+ *                 example: Parking 1
+ *               name:
+ *                 type: string
+ *                 description: The parking's name.
+ *                 example: Parking 1
+ *               type:
+ *                 type: string
+ *                 enum: [AIRPORT, CITY, SHOPPING_CENTER]
+ *                 description: The parking's type.
+ *                 example: AIRPORT
+ *               city: 
+ *                 tyepe: string
+ *                 description: The parking's city.
+ *                 example: BEAUVAIS
+ *     description:
+ *     responses:
+ *       200:
+ *         description: The list of the parkings
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Parking'
+ */
+router.post("/parkings", (req, res) => {
+	parkings.push(req.body);
+	res.status(200).json(parkings);
+});
+
+
+/**
+ * @openapi
+ * /parkings:
+ *   put:
+ *     tags: [Parkings]
+ *     summary: Modify a parking
+*     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: number
+ *         required: true
+ *         description: The parking id 
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 description: The parking's name.
+ *                 example: Parking 1
+ *               type:
+ *                 type: string
+ *                 enum: [AIRPORT, CITY, SHOPPING_CENTER]
+ *                 description: The parking's type.
+ *                 example: AIRPORT
+ *               city: 
+ *                 tyepe: string
+ *                 description: The parking's city.
+ *                 example: BEAUVAIS
+ *     description:
+ *     responses:
+ *       200:
+ *         description: The list of the parkings
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Parking'
+ */
+router.put('/parkings/:id', (req,res) => {    
+	const id = parseInt(req.params.id)    
+	let parking = parkings.find(parking => parking.id === id)    
+	parking.name = req.body.name,    
+	parking.city = req.body.city,    
+	parking.type = req.body.type,  
+	res.status(200).json(parking)
+})
+
+/**
+ * @openapi
+ * /parkings:
+ *   delete:
+ *     tags: [Parkings]
+ *     summary: Modify a parking
+*     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: number
+ *         required: true
+ *         description: The parking id 
+ *     description:
+ *     responses:
+ *       200:
+ *         description: The list of the parkings
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Parking'
+ */
+router.delete('/parkings/:id', (req,res) => {   
+	const id = parseInt(req.params.id)    
+	let parking = parkings.find(parking => parking.id === id)    
+	parkings.splice(parkings.indexOf(parking),1)    
+	res.status(200).json(parkings)
+})
+
+
+module.exports = router;

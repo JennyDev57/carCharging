@@ -1,0 +1,2245 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API - API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/v1/configurations": {
+      "get": {
+        "tags": [
+          "Configuration"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Configurations.ConfigurationItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Configurations.ConfigurationItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Configurations.ConfigurationItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/authentications/token": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.LoginWithCredentialsRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.LoginWithCredentialsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.LoginWithCredentialsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.LoginWithCredentialsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Authentications.LoginResponse, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Authentications.LoginResponse, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Authentications.LoginResponse, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Login"
+        ],
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.RefreshRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.RefreshRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.RefreshRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.RefreshRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Authentications.LoginResponse, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Authentications.LoginResponse, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Authentications.LoginResponse, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/authentications/password": {
+      "patch": {
+        "tags": [
+          "Login"
+        ],
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.SetPasswordRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.SetPasswordRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.SetPasswordRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.SetPasswordRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/authentications/password/reset": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.PasswordForgottenRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.PasswordForgottenRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.PasswordForgottenRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.PasswordForgottenRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Login"
+        ],
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.ResetPasswordRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.ResetPasswordRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.ResetPasswordRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.ResetPasswordRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/meals": {
+      "get": {
+        "tags": [
+          "Meals"
+        ],
+        "description": "All dates are in format yyyy-mm-dd",
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[System.Collections.Generic.List`1[[Mew.Api.Dtos.Meals.MealItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[System.Collections.Generic.List`1[[Mew.Api.Dtos.Meals.MealItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[System.Collections.Generic.List`1[[Mew.Api.Dtos.Meals.MealItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/meals/elements/{mealElementId}/redraw": {
+      "patch": {
+        "tags": [
+          "Meals"
+        ],
+        "description": "All dates are in format yyyy-mm-dd",
+        "parameters": [
+          {
+            "name": "mealElementId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[System.Collections.Generic.List`1[[Mew.Api.Dtos.Meals.MealElementItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[System.Collections.Generic.List`1[[Mew.Api.Dtos.Meals.MealElementItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[System.Collections.Generic.List`1[[Mew.Api.Dtos.Meals.MealElementItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/explain/{planningMealId}": {
+      "get": {
+        "tags": [
+          "Meals"
+        ],
+        "description": "All dates are in format yyyy-mm-dd",
+        "parameters": [
+          {
+            "name": "planningMealId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/plannings": {
+      "get": {
+        "tags": [
+          "Planning"
+        ],
+        "description": "All dates are in format yyyy-mm-dd",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Plannings.PlanningItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Plannings.PlanningItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Plannings.PlanningItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Planning"
+        ],
+        "description": "All dates are in format yyyy-mm-dd",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.CreatePlanningRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.CreatePlanningRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.CreatePlanningRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.CreatePlanningRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Plannings.PlanningItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Plannings.PlanningItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Plannings.PlanningItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/plannings/weeks": {
+      "post": {
+        "tags": [
+          "Planning"
+        ],
+        "description": "All dates are in format yyyy-mm-dd",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.AddWeekToPlanningRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.AddWeekToPlanningRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.AddWeekToPlanningRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.AddWeekToPlanningRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Plannings.PlanningItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Plannings.PlanningItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Plannings.PlanningItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/plannings/weeks/{weekIndex}": {
+      "put": {
+        "tags": [
+          "Planning"
+        ],
+        "description": "All dates are in format yyyy-mm-dd\nweekIndex must be 1, 2, 3 or 4",
+        "parameters": [
+          {
+            "name": "weekIndex",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.UpdateWeekToPlanningRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.UpdateWeekToPlanningRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.UpdateWeekToPlanningRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.UpdateWeekToPlanningRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Plannings.PlanningItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Plannings.PlanningItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Plannings.PlanningItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Planning"
+        ],
+        "description": "All dates are in format yyyy-mm-dd\nweekIndex must be 1, 2, 3 or 4",
+        "parameters": [
+          {
+            "name": "weekIndex",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Plannings.PlanningItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Plannings.PlanningItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Plannings.PlanningItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/plannings/generate": {
+      "post": {
+        "tags": [
+          "Planning"
+        ],
+        "description": "All dates are in format yyyy-mm-dd",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[System.Collections.Generic.List`1[[Mew.Api.Dtos.Meals.MealItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[System.Collections.Generic.List`1[[Mew.Api.Dtos.Meals.MealItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[System.Collections.Generic.List`1[[Mew.Api.Dtos.Meals.MealItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/recipes/{foodId}": {
+      "get": {
+        "tags": [
+          "Recipe"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "foodId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[MenuGenerators.Api.Dtos.Foods.Recipes.RecipeItem, MenuGenerators.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[MenuGenerators.Api.Dtos.Foods.Recipes.RecipeItem, MenuGenerators.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[MenuGenerators.Api.Dtos.Foods.Recipes.RecipeItem, MenuGenerators.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/picture/{id}": {
+      "get": {
+        "tags": [
+          "Recipe"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "format": "byte"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "byte"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "byte"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/register": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.RegisterUserRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.RegisterUserRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.RegisterUserRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.RegisterUserRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Authentications.LoginResponse, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Authentications.LoginResponse, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Authentications.LoginResponse, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/me": {
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "description": "All dates are in format yyyy-mm-dd",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "description": "All dates are in format yyyy-mm-dd",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.SetUserProfileRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.SetUserProfileRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.SetUserProfileRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.SetUserProfileRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/me/preferences": {
+      "patch": {
+        "tags": [
+          "User"
+        ],
+        "description": "All dates are in format yyyy-mm-dd",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.SetUserPreferencesRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.SetUserPreferencesRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.SetUserPreferencesRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.SetUserPreferencesRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/guests": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "All dates are in format yyyy-mm-dd",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.AddOrUpdateGuestRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.AddOrUpdateGuestRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.AddOrUpdateGuestRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.AddOrUpdateGuestRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/guests/{guestId}": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "description": "All dates are in format yyyy-mm-dd",
+        "parameters": [
+          {
+            "name": "guestId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.AddOrUpdateGuestRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.AddOrUpdateGuestRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.AddOrUpdateGuestRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.AddOrUpdateGuestRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "description": "All dates are in format yyyy-mm-dd",
+        "parameters": [
+          {
+            "name": "guestId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/me/picture": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.SetUserPictureRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.SetUserPictureRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.SetUserPictureRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mew.Api.Dtos.Users.SetUserPictureRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "format": "byte"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "byte"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "byte"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "format": "byte"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "byte"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "byte"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MenuGenerators.Api.Dtos.Foods.Recipes.RecipeCharacteristicItem": {
+        "type": "object",
+        "properties": {
+          "preparation_time": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cooking_time": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cost": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "difficulty": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MenuGenerators.Api.Dtos.Foods.Recipes.RecipeItem": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "steps": {
+            "type": "string",
+            "nullable": true
+          },
+          "characteristics": {
+            "$ref": "#/components/schemas/MenuGenerators.Api.Dtos.Foods.Recipes.RecipeCharacteristicItem"
+          },
+          "nutritional_information": {
+            "$ref": "#/components/schemas/MenuGenerators.Api.Dtos.Foods.Recipes.RecipeNutritionalItem"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MenuGenerators.Api.Dtos.Foods.Recipes.RecipeNutritionalItem": {
+        "type": "object",
+        "properties": {
+          "energy": {
+            "type": "string",
+            "nullable": true
+          },
+          "lipid": {
+            "type": "number",
+            "format": "float"
+          },
+          "fatty_acid": {
+            "type": "number",
+            "format": "float"
+          },
+          "glucid": {
+            "type": "number",
+            "format": "float"
+          },
+          "sugar": {
+            "type": "number",
+            "format": "float"
+          },
+          "fiber": {
+            "type": "number",
+            "format": "float"
+          },
+          "protein": {
+            "type": "number",
+            "format": "float"
+          },
+          "salt": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Authentications.LoginResponse": {
+        "type": "object",
+        "properties": {
+          "access_token": {
+            "type": "string",
+            "nullable": true
+          },
+          "refresh_token": {
+            "type": "string",
+            "nullable": true
+          },
+          "token_type": {
+            "type": "string",
+            "nullable": true
+          },
+          "expires_in": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Authentications.LoginWithCredentialsRequest": {
+        "type": "object",
+        "properties": {
+          "login": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "client_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "client_secret": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Authentications.PasswordForgottenRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Authentications.RefreshRequest": {
+        "type": "object",
+        "properties": {
+          "refresh_token": {
+            "type": "string",
+            "nullable": true
+          },
+          "client_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "client_secret": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Authentications.ResetPasswordRequest": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Authentications.SetPasswordRequest": {
+        "type": "object",
+        "properties": {
+          "old_password": {
+            "type": "string",
+            "nullable": true
+          },
+          "new_password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Configurations.AllergenItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Configurations.ConfigurationItem": {
+        "type": "object",
+        "properties": {
+          "allergens": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mew.Api.Dtos.Configurations.AllergenItem"
+            },
+            "nullable": true
+          },
+          "food_category_exclusions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mew.Api.Dtos.Configurations.FoodCategoryExclusionItem"
+            },
+            "nullable": true
+          },
+          "supplements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mew.Api.Dtos.Configurations.SupplementConfigurationItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Configurations.FoodCategoryExclusionItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Configurations.SupplementConfigurationItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "brand": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "measure": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Meals.MealElementItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "food_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "food_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "part": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Meals.MealPartItem"
+          },
+          "portions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mew.Api.Dtos.Meals.PortionItem"
+            },
+            "nullable": true
+          },
+          "is_in_shopping_list": {
+            "type": "boolean"
+          },
+          "added_adults": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "added_children": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "default_adult_portion": {
+            "type": "number",
+            "format": "double"
+          },
+          "default_child_portion": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Meals.MealItem": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "meal": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.MealOfTheDayItem"
+          },
+          "elements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mew.Api.Dtos.Meals.MealElementItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Meals.MealPartItem": {
+        "enum": [
+          "Starter",
+          "Main",
+          "Accompaniment",
+          "Bread",
+          "Cheese",
+          "Dessert"
+        ],
+        "type": "string"
+      },
+      "Mew.Api.Dtos.Meals.PortionItem": {
+        "type": "object",
+        "properties": {
+          "guest_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "quantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "has_allergen_alert": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Plannings.AddWeekToPlanningRequest": {
+        "type": "object",
+        "properties": {
+          "planning_meals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.PlanningMealItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Plannings.CreatePlanningRequest": {
+        "type": "object",
+        "properties": {
+          "start_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "planning_meals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.PlanningMealItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Plannings.MealOfTheDayItem": {
+        "enum": [
+          "Lunch",
+          "Dinner"
+        ],
+        "type": "string"
+      },
+      "Mew.Api.Dtos.Plannings.PlanningItem": {
+        "type": "object",
+        "properties": {
+          "start_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "week_count": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "planning_meals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.PlanningMealItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Plannings.PlanningMealItem": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "meal": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.MealOfTheDayItem"
+          },
+          "is_enabled": {
+            "type": "boolean"
+          },
+          "added_adults": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "added_children": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "has_starter": {
+            "type": "boolean"
+          },
+          "has_main": {
+            "type": "boolean"
+          },
+          "has_cheese": {
+            "type": "boolean"
+          },
+          "has_dessert": {
+            "type": "boolean"
+          },
+          "is_quick": {
+            "type": "boolean"
+          },
+          "is_economic": {
+            "type": "boolean"
+          },
+          "is_take_away": {
+            "type": "boolean"
+          },
+          "is_gourmet": {
+            "type": "boolean"
+          },
+          "guest_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Plannings.UpdateWeekToPlanningRequest": {
+        "type": "object",
+        "properties": {
+          "planning_meals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.PlanningMealItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Users.AddOrUpdateGuestRequest": {
+        "type": "object",
+        "properties": {
+          "picture_file": {
+            "type": "string",
+            "nullable": true
+          },
+          "first_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "last_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Users.GenderItem"
+          },
+          "birth_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "height": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "weight": {
+            "type": "number",
+            "format": "double"
+          },
+          "ideal_weight": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "physical_activity_level": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Users.PhysicalActivityLevelItem"
+          },
+          "is_pregnant": {
+            "type": "boolean"
+          },
+          "is_breast_feeding": {
+            "type": "boolean"
+          },
+          "group": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Users.GuestGroupItem"
+          },
+          "allergen_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nullable": true
+          },
+          "supplements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mew.Api.Dtos.Users.SupplementPrescriptionItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Users.GenderItem": {
+        "enum": [
+          "Man",
+          "Woman"
+        ],
+        "type": "string"
+      },
+      "Mew.Api.Dtos.Users.GuestGroupItem": {
+        "enum": [
+          "FamilyMember",
+          "RegularGuest"
+        ],
+        "type": "string"
+      },
+      "Mew.Api.Dtos.Users.GuestItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "picture_file": {
+            "type": "string",
+            "nullable": true
+          },
+          "first_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "last_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Users.GenderItem"
+          },
+          "birth_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "height": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "weight": {
+            "type": "number",
+            "format": "double"
+          },
+          "ideal_weight": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "physical_activity_level": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Users.PhysicalActivityLevelItem"
+          },
+          "is_pregnant": {
+            "type": "boolean"
+          },
+          "is_breast_feeding": {
+            "type": "boolean"
+          },
+          "group": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Users.GuestGroupItem"
+          },
+          "allergens": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mew.Api.Dtos.Configurations.AllergenItem"
+            },
+            "nullable": true
+          },
+          "supplements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mew.Api.Dtos.Users.SupplementPrescriptionItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Users.PhysicalActivityLevelItem": {
+        "enum": [
+          "Low",
+          "Medium",
+          "High"
+        ],
+        "type": "string"
+      },
+      "Mew.Api.Dtos.Users.RegisterUserRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "client_secret": {
+            "type": "string",
+            "nullable": true
+          },
+          "first_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Users.SetUserPictureRequest": {
+        "type": "object",
+        "properties": {
+          "file_data": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Users.SetUserPreferencesRequest": {
+        "type": "object",
+        "properties": {
+          "week_lunch": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Users.TemplateMealItem"
+          },
+          "week_dinner": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Users.TemplateMealItem"
+          },
+          "weekend_lunch": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Users.TemplateMealItem"
+          },
+          "weekend_dinner": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Users.TemplateMealItem"
+          },
+          "food_category_exclusion_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Users.SetUserProfileRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "first_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "last_name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Users.SupplementPrescriptionItem": {
+        "type": "object",
+        "properties": {
+          "supplement_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "daily_quantity": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Users.TemplateMealItem": {
+        "type": "object",
+        "properties": {
+          "is_enabled": {
+            "type": "boolean"
+          },
+          "added_adults": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "added_children": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "has_starter": {
+            "type": "boolean"
+          },
+          "has_main": {
+            "type": "boolean"
+          },
+          "has_cheese": {
+            "type": "boolean"
+          },
+          "has_dessert": {
+            "type": "boolean"
+          },
+          "is_quick": {
+            "type": "boolean"
+          },
+          "is_economic": {
+            "type": "boolean"
+          },
+          "is_take_away": {
+            "type": "boolean"
+          },
+          "is_gourmet": {
+            "type": "boolean"
+          },
+          "guest_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mew.Api.Dtos.Users.UserItem": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "first_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "last_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "week_lunch": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Users.TemplateMealItem"
+          },
+          "week_dinner": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Users.TemplateMealItem"
+          },
+          "weekend_lunch": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Users.TemplateMealItem"
+          },
+          "weekend_dinner": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Users.TemplateMealItem"
+          },
+          "guests": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mew.Api.Dtos.Users.GuestItem"
+            },
+            "nullable": true
+          },
+          "food_category_exclusions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mew.Api.Dtos.Configurations.FoodCategoryExclusionItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Storm.Api.Dtos.Response": {
+        "type": "object",
+        "properties": {
+          "is_success": {
+            "type": "boolean"
+          },
+          "error_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "error_message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Storm.Api.Dtos.Response`1[[MenuGenerators.Api.Dtos.Foods.Recipes.RecipeItem, MenuGenerators.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/MenuGenerators.Api.Dtos.Foods.Recipes.RecipeItem"
+          },
+          "is_success": {
+            "type": "boolean"
+          },
+          "error_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "error_message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Authentications.LoginResponse, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Authentications.LoginResponse"
+          },
+          "is_success": {
+            "type": "boolean"
+          },
+          "error_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "error_message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Configurations.ConfigurationItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Configurations.ConfigurationItem"
+          },
+          "is_success": {
+            "type": "boolean"
+          },
+          "error_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "error_message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Plannings.PlanningItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Plannings.PlanningItem"
+          },
+          "is_success": {
+            "type": "boolean"
+          },
+          "error_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "error_message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Storm.Api.Dtos.Response`1[[Mew.Api.Dtos.Users.UserItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Mew.Api.Dtos.Users.UserItem"
+          },
+          "is_success": {
+            "type": "boolean"
+          },
+          "error_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "error_message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Storm.Api.Dtos.Response`1[[System.Collections.Generic.List`1[[Mew.Api.Dtos.Meals.MealElementItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mew.Api.Dtos.Meals.MealElementItem"
+            },
+            "nullable": true
+          },
+          "is_success": {
+            "type": "boolean"
+          },
+          "error_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "error_message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Storm.Api.Dtos.Response`1[[System.Collections.Generic.List`1[[Mew.Api.Dtos.Meals.MealItem, Mew.Api.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mew.Api.Dtos.Meals.MealItem"
+            },
+            "nullable": true
+          },
+          "is_success": {
+            "type": "boolean"
+          },
+          "error_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "error_message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

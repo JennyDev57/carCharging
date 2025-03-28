@@ -1,0 +1,31 @@
+services:
+  node:
+    image: node
+    container_name: app_node
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "5000:5000"
+    command: npm run dev
+    depends_on:
+      - mongo
+    # environment:
+    #   - MONGO_URI=mongodb://mongo:27017/mydatabase
+      
+
+  mongo:
+    image: mongo
+    container_name: app_mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db/
+      - ./docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+
+volumes:
+  mongo_data:
+    driver: local
+    name: mongo_data
+
+#docker-compose down && docker-compose up -d && docker-compose logs -f web
