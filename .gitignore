@@ -1,6 +1,6 @@
 API/node_modules/
 API/package-lock.json
-API/.env
+API/.*
 API/yarn.lock
 
 FRONT/node_modules/
