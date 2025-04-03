@@ -8,3 +8,4 @@ FRONT/package-lock.json
 FRONT/yarn.lock
 
 *.code-workspace
+mongo-create-init.js
