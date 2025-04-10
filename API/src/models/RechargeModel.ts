@@ -14,10 +14,6 @@ interface IRecharge {
   type RechargeModel = mongoose.Model<IRecharge, {}, IRechargeMethods>;
 
   const RechargeSchema = new mongoose.Schema<IRecharge, RechargeModel, IRechargeMethods>({
-	date: {
-		type: Date,
-		require: true,
-	},
 	start_hour: {
 		type: Date,
 		require: true,

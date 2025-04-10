@@ -1,9 +1,9 @@
 {
-  "name": "API_Node_web_app",
+  "name": "API_Car_Charging",
   "license": "MIT",
   "version": "0.0.1",
   "private": true,
-  "description": "API Node JS",
+  "description": "API Node JS - Car Charging",
   "author": "Jennifer Durthaler <jennifer.durthaler@gmail.com>",
   "main": "index.ts",
   "scripts": {

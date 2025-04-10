@@ -12,7 +12,8 @@ const serviceRechargeControllers = new RechargeControllers();
  *          Recharge:
  *              type: object
  *              required: 
- *                  - off_pick_hour
+ *                  - start_date
+ *                  - end_date
  *              properties:
  *                  is_success:
  *                      type: boolean
@@ -35,13 +36,9 @@ const serviceRechargeControllers = new RechargeControllers();
  *           schema:
  *             type: object
  *             properties:
- *               start_off_pick_hour: 
+ *               start_date: 
  *                  type: string
- *               end_off_pick_hour: 
- *                  type: string
- *               start_full_hour: 
- *                  type: string
- *               end_full_hour: 
+ *               end_date: 
  *                  type: string
  *     description: Add new recharge time
  *     responses:
