@@ -9,8 +9,7 @@
   "scripts": {
     "test": "nyc ts-mocha tests/*.ts",
     "dev": "nodemon ./src/index.ts",
-    "start": "node ./src/index.ts",
-    "codegen": "graphql-codegen --config codegen.yml"
+    "start": "node ./src/index.ts"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.0.15",

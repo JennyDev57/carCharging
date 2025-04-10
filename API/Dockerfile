@@ -1,5 +1,5 @@
 # Utilise l'image de base officielle de Node.js
-FROM node
+FROM node:slim
 
 # Crée un répertoire pour l'application
 WORKDIR /usr/src/app
@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Expose le port sur lequel l'application va tourner
-EXPOSE 3000
+EXPOSE 5000
 
 # Commande pour démarrer l'application
 CMD ["npm", "run", "dev"]

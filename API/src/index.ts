@@ -78,6 +78,7 @@ export async function startServer() {
       }));
     });
 
+    
     // Start the Express server
     app.listen(PORT, HOST, () => {
       console.log(`Running on http://${HOST_LOCAL}:${PORT_LOCAL}`);

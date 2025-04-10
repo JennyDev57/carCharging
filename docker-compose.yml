@@ -1,0 +1,32 @@
+services:
+  mongo:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_db_data:/data/db
+  api:
+      build: ./API
+      working_dir: /usr/src/app      
+      volumes:
+        - API:/usr/src/app
+      ports:
+        - 5000:5000
+      command: npm run dev
+      depends_on:
+        - mongo
+  front:
+      build: ./FRONT
+      depends_on:
+        - api
+      volumes:
+        - FRONT:/usr/src/app
+      ports:
+        - 3000:3000
+
+volumes:
+  mongo_db_data:
+    driver: local
+  API:
+  FRONT:
+ 

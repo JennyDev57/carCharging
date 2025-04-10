@@ -115,12 +115,12 @@ router.post("/login", serviceUserControllers.login);
  *     security:
  *      - bearerAuth: []
  *     tags: [Users]
- *     summary: Update User 
+ *     summary: User update
  *   delete:
  *     security:
  *      - bearerAuth: []
  *     tags: [Users]
- *     summary: Delete User
+ *     summary: User delete
  */
  
 router.get("/me", authenticateToken, serviceUserControllers.getUser);
