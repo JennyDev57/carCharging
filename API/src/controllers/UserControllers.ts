@@ -14,7 +14,6 @@ export default class UsersControllers {
 		const data = req.body;
 		try {
 			const userExist = await User.findOne({ email: data.email });
-			console.log(userExist);
 			if (userExist) {
 				throw new Error("Email already exist");
 			}

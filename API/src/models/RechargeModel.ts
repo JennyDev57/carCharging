@@ -5,7 +5,7 @@ interface IRecharge {
     date: Date;
     start_hour: Timestamp;
     end_hour: Timestamp;
-    total: Number;
+    total_cost: Number;
   }
   
   interface IRechargeMethods {
@@ -20,10 +20,11 @@ interface IRecharge {
 	},
 	end_hour: {
 		type: Date,
-        required: true
+        required: true,
 	},
-    total: {
-        type: Number
+    total_cost: {
+        type: Number,
+        required: true,
     }
 });
 

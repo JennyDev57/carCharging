@@ -66,7 +66,7 @@ export default class RechargeControllers {
         };
     }
 
-    private caculTotal(hours: Result): number {
+    private totalCost(hours: Result): number {
         const totalHC = hours.offPeakHour.hours * this.KWh * this.HC * this.TVA;
         const totalHP = hours.fullHour.hours * this.KWh * this.HP * this.TVA;
 
@@ -82,18 +82,19 @@ export default class RechargeControllers {
         try {
             const start = new Date(data.start_date);
             const end = new Date(data.end_date);
-
     
-            const offPeakHour = this.getPeakAndOffPeakDurations(start, end);
-            
+            const offPeakHour = this.getPeakAndOffPeakDurations(start, end);            
+            const totalCost = this.totalCost(offPeakHour)
+
             let recharge = new Recharge({
                 start_hour: start.getTime(),
                 end_hour: end.getTime(),
+                total_cost: totalCost,
             });
-			await recharge.save();
             
-            const total = this.caculTotal(offPeakHour)
-            res.status(201).send(SuccessApiResponse(total));
+            await recharge.save();
+
+            res.status(201).send(SuccessApiResponse(recharge));
 
             
         } catch (error) {

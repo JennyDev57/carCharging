@@ -8,7 +8,8 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Installe les dépendances
-RUN npm install
+RUN npm install -g pnpm
+RUN pnpm install
 
 # Copie le reste du code
 COPY . .
@@ -17,5 +18,5 @@ COPY . .
 EXPOSE 5000
 
 # Commande pour démarrer l'application
-CMD ["npm", "run", "dev"]
+CMD ["pnpm", "run", "dev"]
 

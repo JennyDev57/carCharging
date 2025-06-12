@@ -2,12 +2,16 @@ FROM node:slim
 
 WORKDIR /usr/src/app
 
-COPY package.json ./package.json
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
-RUN npm install
+COPY package*.json ./
+
+RUN npm install -g pnpm
+RUN pnpm install
 
 COPY . .
 
-EXPOSE 3000
-
-CMD [ "npm", "start" ]
+ENV HOST=0.0.0.0
+ENV PORT=4321
+EXPOSE 4321
+CMD ["astro", "dev"]

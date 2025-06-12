@@ -13,7 +13,6 @@ services:
     # environment:
     #   - MONGO_URI=mongodb://mongo:27017/mydatabase
       
-
   mongo:
     image: mongo
     container_name: app_mongo

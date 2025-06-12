@@ -1,32 +1,38 @@
 services:
   mongo:
+    container_name: mongo
     image: mongo:latest
     ports:
       - 27017:27017
     volumes:
       - mongo_db_data:/data/db
   api:
+      container_name: api
       build: ./API
+      image: api
       working_dir: /usr/src/app      
       volumes:
         - API:/usr/src/app
       ports:
         - 5000:5000
-      command: npm run dev
+      command: pnpm run dev
       depends_on:
         - mongo
   front:
+      container_name: front
       build: ./FRONT
+      image: front
       depends_on:
         - api
       volumes:
-        - FRONT:/usr/src/app
+        - ./FRONT:/usr/src/app
+        - astro_node_modules:/app/node_modules
       ports:
-        - 3000:3000
-
+        - 4321:4321
 volumes:
   mongo_db_data:
     driver: local
   API:
   FRONT:
+  astro_node_modules:
  

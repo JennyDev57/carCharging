@@ -106,7 +106,7 @@ router.post("/login", serviceUserControllers.login);
  *     description:
  *     responses:
  *       200:
- *         description: The list of users
+ *         description: User details
  *         content:
  *           application/json:
  *              schema:
@@ -127,8 +127,24 @@ router.get("/me", authenticateToken, serviceUserControllers.getUser);
 // router.patch("/me", authenticateToken, serviceUserControllers.updateUser);
 router.delete("/me", authenticateToken, serviceUserControllers.deleteUser);
 
+/**
+* @openapi
+* /user/users:
+*   get:
+*     security:
+*      - bearerAuth: [] 
+*     tags: [Users]
+*     summary: Users information
+*     description:
+*     responses:
+*       200:
+*         description: List of users
+*         content:
+*           application/json:
+*              schema:
+*               $ref: '#/components/schemas/User'
+*/
 // router.post("/refreshToken", serviceUserControllers.refreshToken);
 router.get("/users", authenticateToken, serviceUserControllers.getUserList);
-
 
 export default router;
