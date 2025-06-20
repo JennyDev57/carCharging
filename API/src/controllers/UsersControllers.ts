@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
-import { ErrorApiResponse, SuccessApiResponse } from "../config/ApiResponses";
+import { ErrorApiResponse, SuccessApiResponse } from "../config/ApiResponses.ts";
 import {
 	generateAccessToken,
 	generateRefreshToken,
-} from "../config/Authentification";
-import { User } from "../models/UserModel";
+} from "../config/Authentification.ts";
+import { Users } from "../models/UsersModel.ts";
 import jwt from "jsonwebtoken";
 const ObjectID = mongoose.Types.ObjectId;
 
@@ -13,12 +13,12 @@ export default class UsersControllers {
 	public register = async (req: any, res: any) => {
 		const data = req.body;
 		try {
-			const userExist = await User.findOne({ email: data.email });
+			const userExist = await Users.findOne({ email: data.email });
 			if (userExist) {
 				throw new Error("Email already exist");
 			}
 
-			let user = new User({
+			let user = new Users({
 				email: data.email,
 				password: data.password,
 				role: "USER",
@@ -36,7 +36,7 @@ export default class UsersControllers {
 		const password = req.body.password;
 
 		try {
-			const user = await User.findOne({ email: email });
+			const user = await Users.findOne({ email: email });
 			if(!user) {
 				throw new Error(`No user found with email: ${email}`)
 			}
@@ -96,7 +96,7 @@ export default class UsersControllers {
 
 	public getUserList = async (req: any, res: any) => {
 		try {
-			const userList = await User.find({});
+			const userList = await Users.find({});
 
 			res.send(SuccessApiResponse(userList));
 		} catch (error) {
@@ -111,7 +111,7 @@ export default class UsersControllers {
 			if (!ObjectID.isValid(id)) {
 				return res.status(400).send(SuccessApiResponse(`No record with given id: ${id}`));
 			}
-			const result = await User.findByIdAndDelete(id);
+			const result = await Users.findByIdAndDelete(id);
 
 			res.status(201).send(SuccessApiResponse(result));
 		} catch (error) {

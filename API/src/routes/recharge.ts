@@ -1,6 +1,6 @@
 import express from "express";
-import { authenticateToken } from "../config/Authentification";
-import RechargeControllers from "../controllers/RechargeControllers";
+import { authenticateToken } from "../config/Authentification.ts";
+import RechargeControllers from "../controllers/RechargeControllers.ts";
 const router = express.Router();
 
 const serviceRechargeControllers = new RechargeControllers();

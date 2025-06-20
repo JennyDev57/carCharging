@@ -1,6 +1,6 @@
 // import parkingsRoute from "./parkings";
-import userRoute from "./users";
-import rechargeRoute from "./recharge";
+import userRoute from "./users.ts";
+import rechargeRoute from "./recharge.ts";
 
 
 /**

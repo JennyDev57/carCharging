@@ -1,8 +1,9 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-import { User } from "../models/UserModel";
-import jwt, { JwtPayload } from "jsonwebtoken";
+import { Users } from "../models/UsersModel.ts";
+import jwt from "jsonwebtoken";
+import type { JwtPayload } from "jsonwebtoken"
 
 function generateAccessToken(user: object, expire: number = 1800) {
 	console.log(user)
@@ -25,7 +26,7 @@ function authenticateToken(req: any, res: any, next: any) {
 
 	try {
 		const decoded = jwt.verify(token, String(process.env.TOKEN_SECRET));
-		req.user = new User(decoded);
+		req.user = new Users(decoded);
 		next();
 	} catch (error) {
 		console.log("Create a new access token with the refresh token");
@@ -49,7 +50,7 @@ function authenticateToken(req: any, res: any, next: any) {
 			})
 				.header("Authorization", accessToken)
 				.send(decodeRefreshToken);
-			req.user = new User(decodeRefreshToken);
+			req.user = new Users(decodeRefreshToken);
 			next();
 		} catch (error) {
 			res.status(401).send("Invalid Token : " + error);

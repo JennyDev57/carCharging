@@ -1,8 +1,8 @@
 import express from "express";
 const router = express.Router();
 
-import UserControllers from "../controllers/UserControllers";
-import { authenticateToken } from "../config/Authentification";
+import UserControllers from "../controllers/UsersControllers.ts";
+import { authenticateToken } from "../config/Authentification.ts";
 const serviceUserControllers = new UserControllers();
 
 /**

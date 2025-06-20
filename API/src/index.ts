@@ -5,14 +5,15 @@ dotenv.config();
 import express from "express";
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUI from "swagger-ui-express";
-import swaggerDefinition from "./docs/basicInfo";
-import * as router from "./routes";
+import { swaggerDefinition } from "./docs/swaggerDefinition.ts"
+import * as router from "./routes/index.ts";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
 import { renderToString } from 'react-dom/server';
-import HomePage from "./pages/HomePage";
-import template from './template';
+import template from './template.ts';
+import connectToDatabase  from "./config/database.ts"
+
 
 // // Constants
 const PORT = Number(process.env.PORT);
@@ -22,11 +23,13 @@ const HOST_LOCAL = String(process.env.HOST_LOCAL);
 const swaggerOptions = {
   definition: swaggerDefinition,
   // Paths to files containing OpenAPI definitions
-  apis: [`${__dirname}/routes/*.ts`],
+  apis: [`./routes/*.ts`],
 };
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
 
-const connectToDatabase = require('./config/database');
+import { fromNodeHeaders, toNodeHandler } from "better-auth/node";
+import { auth } from "./lib/auth.ts";
+import HomePage from "./pages/HomePage.ts";
 
 /** deprecated */
 // async function startServerNormal() {
@@ -58,13 +61,23 @@ const connectToDatabase = require('./config/database');
 
 export async function startServer() {
     await connectToDatabase();
-
     // Create an Express app
-    const app = express();  
-
-    app.use(express.json());
-    app.use(cors());
+    const app = express(); 
+    app.use(cors({
+        origin: "http://localhost:4321", // Replace with your frontend's origin
+        methods: ["GET", "POST", "PUT", "DELETE"], // Specify allowed HTTP methods
+        credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+    }));
     app.use(cookieParser());
+
+    // Better-Auth route    
+    app.all("/api/auth/*", toNodeHandler(auth));
+    app.get("/api/me", async (req, res) => {
+      const session = await auth.api.getSession({
+          headers: fromNodeHeaders(req.headers),
+        });
+      return res.json(session);
+    });
 
     app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec, {explorer: true}));
     // app.use('/parking', router.parkingsRoute);
@@ -78,7 +91,9 @@ export async function startServer() {
       }));
     });
 
-    
+    app.use(express.json());
+
+
     // Start the Express server
     app.listen(PORT, HOST, () => {
       console.log(`Running on http://${HOST_LOCAL}:${PORT_LOCAL}`);

@@ -17,7 +17,8 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "add": "^2.0.6",
-    "astro": "^5.9.2",
+    "astro": "^5.10.0",
+    "better-auth": "^1.2.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "drawer": "^0.0.2",
@@ -25,7 +26,7 @@
     "npx": "^10.2.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "shadcn": "^2.6.3",
+    "shadcn": "^2.7.0",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.10",
     "vaul": "^1.1.2"

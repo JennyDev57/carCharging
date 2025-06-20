@@ -1,4 +1,4 @@
-const basicInfo = {
+export const swaggerDefinition = {
   openapi: "3.0.3", // present supported openapi version
   info: {
     title: "Simple API", // short title.
@@ -22,5 +22,3 @@ const basicInfo = {
   ],
 
 };
-
-export default basicInfo;

@@ -1,4 +1,4 @@
-import RechargeControllers from "../controllers/RechargeControllers";
+import RechargeControllers from "../controllers/RechargeControllers.ts";
 
 export class RechargeFonction {
 

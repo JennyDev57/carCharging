@@ -19,3 +19,10 @@ db.createUser(
 );
 
 db.createCollection('users');
+
+
+// Auth Better database
+db.createCollection('user');
+db.createCollection('user_session');
+db.createCollection('user_account');
+db.createCollection('user_verification');

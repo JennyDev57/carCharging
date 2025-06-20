@@ -2,7 +2,7 @@
 import mongoose from "mongoose";
 
 
-async function connectToDatabase() {
+export async function connectToDatabase() {
 	try {
 		const mongoDB = process.env.MONGO_URL as string;
 		console.log(mongoDB);
@@ -17,7 +17,7 @@ async function connectToDatabase() {
 	}
   }
 
-module.exports = connectToDatabase;
+export default connectToDatabase;
 
 
 // const database = {};

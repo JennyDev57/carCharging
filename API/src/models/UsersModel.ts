@@ -1,10 +1,11 @@
-import mongoose, { CallbackError } from "mongoose";
+import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 
-enum Roles {
-	ADMIN = "ADMIN",
-	USER = "USER",
-}
+const Roles = {
+	ADMIN: "ADMIN",
+	USER: "USER",
+} as const;
+type Roles = (typeof Roles )[keyof typeof Roles ];
 
 const SALT_ROUND = 10;
 
@@ -14,14 +15,14 @@ interface IUser {
   role: Roles;
 }
 
-interface IUserMethods {
+interface IUsersMethods {
   setPassword(password: string): string;
   checkPassword(password: string): string;
 }
 
-type UserModel = mongoose.Model<IUser, {}, IUserMethods>;
+type UsersModel = mongoose.Model<IUser, {}, IUsersMethods>;
 
-const UserSchema = new mongoose.Schema<IUser, UserModel, IUserMethods>({
+const UsersSchema = new mongoose.Schema<IUser, UsersModel, IUsersMethods>({
 	email: {
 		type: String,
 		require: true,
@@ -36,7 +37,7 @@ const UserSchema = new mongoose.Schema<IUser, UserModel, IUserMethods>({
 	},
 });
 
-UserSchema.pre("save", async function (next) {
+UsersSchema.pre("save", async function (next) {
 	if (this.isModified("password")) {
 		this.password =  bcrypt.hashSync(String(this.password), SALT_ROUND);
 	}
@@ -44,14 +45,14 @@ UserSchema.pre("save", async function (next) {
 });
 
 
-UserSchema.method('setPassword', function setPassword(password: string) {
+UsersSchema.method('setPassword', function setPassword(password: string) {
   this.password = bcrypt.hashSync(password, SALT_ROUND);
 });
 
-UserSchema.method('checkPassword', function checkPassword(password: string) {
+UsersSchema.method('checkPassword', function checkPassword(password: string) {
   return bcrypt.compareSync(String(password), String(this.password));
 });
 
-const User = mongoose.model("User", UserSchema);
+const Users = mongoose.model("Users", UsersSchema);
 
-export { User };
+export { Users };

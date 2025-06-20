@@ -1,5 +1,5 @@
 import { Timestamp } from "mongodb";
-import mongoose, { CallbackError } from "mongoose";
+import mongoose from "mongoose";
 
 interface IRecharge {
     date: Date;

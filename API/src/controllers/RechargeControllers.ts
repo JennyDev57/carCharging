@@ -1,7 +1,7 @@
 import { now } from "mongoose";
-import { Recharge } from "../models/RechargeModel";
+import { Recharge } from "../models/RechargeModel.ts";
 import { differenceInHours, differenceInMinutes, isBefore, millisecondsToHours, minutesToHours } from "date-fns";
-import { SuccessApiResponse } from "../config/ApiResponses";
+import { SuccessApiResponse } from "../config/ApiResponses.ts";
 
 
 type Result = {
