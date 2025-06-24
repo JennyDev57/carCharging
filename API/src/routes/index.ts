@@ -1,7 +1,5 @@
-// import parkingsRoute from "./parkings";
 import userRoute from "./users.ts";
 import rechargeRoute from "./recharge.ts";
-
 
 /**
  * @swagger

@@ -46,6 +46,7 @@
     }
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.27.1",
     "@types/bcrypt": "^5.0.2",
     "@types/chai": "^4.3.20",
     "@types/cookie-parser": "^1.4.9",

@@ -8,7 +8,10 @@ import * as React from "react";
 //     </div>'
 // )
 
-const HomePage = React.createElement('div', { className: 'text-3xl font-bold underline' }, 'Hello, world!');
+const HomePage = React.createElement('div', { className: 'text-3xl font-bold underline' }, 
+    React.createElement('h1', null, 'HOME PAGE'),
+    React.createElement('div', null, React.createElement('a', { href: "/api-docs" }, "API DOCS")),
+);
 
 
 export default HomePage;

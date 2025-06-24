@@ -8,6 +8,10 @@ const db = client.db();
  
 export const auth = betterAuth({
     database: mongodbAdapter(db),
+    trustedOrigins: ["http://localhost:5000", "http://localhost:4321"],
+    user: {
+        modelName: "user",
+    },
     session: {
         modelName: "user_sessions",
     },

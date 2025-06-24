@@ -19,8 +19,8 @@ export function RegisterForm({
             const requestBody = {email, password}
             console.log(requestBody)
             const tmp = await authClient.signUp.email({
-              email,
-              password,
+              email: email,
+              password: password,
               name: email,
               callbackURL: "/dashboard"             
             })

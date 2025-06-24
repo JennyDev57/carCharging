@@ -1,4 +1,4 @@
-FROM node:slim
+FROM node:current-alpine
 
 WORKDIR /usr/src/app
 
@@ -11,7 +11,7 @@ RUN pnpm install
 
 COPY . .
 
-ENV HOST=0.0.0.0
-ENV PORT=4321
+ENV HOST 0.0.0.0
+ENV PORT 4321
 EXPOSE 4321
 CMD ["astro", "dev"]
