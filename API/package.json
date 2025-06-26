@@ -1,5 +1,5 @@
 {
-  "name": "API_Car_Charging",
+  "name": "api_car_charging",
   "license": "MIT",
   "version": "0.0.1",
   "private": true,
@@ -14,9 +14,6 @@
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.10",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
     "bcrypt": "^5.1.1",
     "better-auth": "^1.2.9",
     "cookie-parser": "^1.4.7",
@@ -46,7 +43,7 @@
     }
   },
   "devDependencies": {
-    "@babel/preset-react": "^7.27.1",
+    "@tailwindcss/cli": "^4.1.10",
     "@types/bcrypt": "^5.0.2",
     "@types/chai": "^4.3.20",
     "@types/cookie-parser": "^1.4.9",
@@ -55,6 +52,8 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/mocha": "^10.0.10",
     "@types/node": "^20.19.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.8",
     "chai": "^5.2.0",

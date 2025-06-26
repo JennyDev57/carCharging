@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
 import { authClient } from "@/lib/auth-client"
+import { navigate } from "astro/virtual-modules/transitions-router.js"
 
 export function RegisterForm({
   className,
@@ -17,12 +18,21 @@ export function RegisterForm({
         e.preventDefault()
         try {
             const requestBody = {email, password}
-            console.log(requestBody)
-            const tmp = await authClient.signUp.email({
+            const { data, error } = await authClient.signUp.email({
               email: email,
               password: password,
               name: email,
-              callbackURL: "/dashboard"             
+              callbackURL: "/login"             
+            }, {
+              onRequest:(ctx) => {
+
+              },
+              onSuccess:(ctx) => {
+                navigate('/login')
+              },
+              onError:(ctx) => {
+                alert(ctx.error.message)
+              }
             })
         } catch (error) {
             console.log(error);
