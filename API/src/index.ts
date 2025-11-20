@@ -23,7 +23,7 @@ const HOST_LOCAL = String(process.env.HOST_LOCAL);
 const swaggerOptions = {
   definition: swaggerDefinition,
   // Paths to files containing OpenAPI definitions
-  apis: [`./routes/*.ts`],
+  apis: [`./src/routes/*`],
 };
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
 
@@ -78,11 +78,9 @@ export async function startServer() {
         });
       return res.json(session);
     });
-
+    
     app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec, {explorer: true}));
-    // app.use('/parking', router.parkingsRoute);
-    app.use('/user', router.userRoute);
-    app.use('/recharge', router.rechargeRoute);
+    app.use('/recharge', router.rechargeRoute);    
 
     app.get('/', (req: any, res: { send: (arg0: string) => void; }) => {
       res.send(template({

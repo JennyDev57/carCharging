@@ -1,4 +1,3 @@
-import userRoute from "./users.ts";
 import rechargeRoute from "./recharge.ts";
 
 /**
@@ -13,4 +12,4 @@ import rechargeRoute from "./recharge.ts";
  *   - bearerAuth: [] 
  */
 
-export { userRoute, rechargeRoute };
+export { rechargeRoute };

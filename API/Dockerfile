@@ -11,12 +11,13 @@ COPY package*.json ./
 COPY . .
 
 # Installe les dépendances
+RUN npm update -g npm
 RUN npm install -g pnpm
 RUN pnpm install
 
 # Expose le port sur lequel l'application va tourner
-ENV HOST 0.0.0.0
-ENV PORT 5000
+# ENV HOST=0.0.0.0
+# ENV PORT=5000
 EXPOSE 5000
 
 # Commande pour démarrer l'application

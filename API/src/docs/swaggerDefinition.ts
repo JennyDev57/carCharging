@@ -11,7 +11,7 @@ export const swaggerDefinition = {
     contact: {
       name: "Jennifer Durthaler", // your name
       email: "jennifer.durthaler@gmail.com", // your email
-      url: "", // your website
+      url: "www.github.com/JennyDev57", // your website
     },
   },
   servers: [

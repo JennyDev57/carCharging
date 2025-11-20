@@ -1,7 +1,7 @@
 services:
   node:
-    image: node
-    container_name: app_node
+    image: docker.io/library/node
+    container_name: node
     working_dir: /usr/src/app
     volumes:
       - .:/usr/src/app
@@ -9,15 +9,18 @@ services:
       - 5000:5000
     command: npm run dev
     depends_on:
-      - mongo
-    # environment:
-    #   - MONGO_URI=mongodb://mongo:27017/mydatabase
+      - mongodb
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/carChargingAPI
       
-  mongo:
-    image: mongo
-    container_name: app_mongo
+  mongodb:
+    image: docker.io/library/mongo
+    container_name: mongodb
     ports:
       - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: api
+      MONGO_INITDB_ROOT_PASSWORD: N6QmF7kSNGLq  
     volumes:
       - mongo_db_data:/data/db/
       - ./docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro

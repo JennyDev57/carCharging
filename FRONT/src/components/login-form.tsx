@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
 import { authClient } from "@/lib/auth-client"
-import { navigate } from "astro/virtual-modules/transitions-router.js"
+import { navigate } from "astro:transitions/client"
 
 export function LoginForm({
   className,
@@ -23,13 +23,13 @@ export function LoginForm({
               password,
               callbackURL: "/dashboard",
             }, {
-              onRequest:(ctx) => {
+              onRequest:(ctx: any) => {
 
               },
-              onSuccess:(ctx) => {
+              onSuccess:(ctx: any) => {
                 navigate('/dashboard')
               },
-              onError:(ctx) => {
+              onError:(ctx: any) => {
                 alert(ctx.error.message)
               }
             })

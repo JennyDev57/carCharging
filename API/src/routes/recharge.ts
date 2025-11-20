@@ -24,7 +24,7 @@ const serviceRechargeControllers = new RechargeControllers();
  */
 
 /**
- * @openapi
+ * @swagger
  * /recharge/add:
  *   post:
  *     tags: [Recharge]

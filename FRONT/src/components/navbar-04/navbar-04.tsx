@@ -3,14 +3,30 @@ import { Logo } from "./logo";
 import { NavMenu } from "./nav-menu";
 import { NavigationSheet } from "./navigation-sheet";
 import { authClient } from "@/lib/auth-client";
-import { navigate } from "astro/virtual-modules/transitions-router.js";
-import { useEffect } from "react";
+import { navigate } from "astro:transitions/client";
 
 
 async function signOut() {
   await authClient.signOut();
   navigate('/login')
 }
+
+async function getSession() {
+  const url = "http://localhost:5000/api/me";
+  try {
+    const response = await fetch(url);
+    console.log(response)
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result
+  } catch (error: any) {
+    console.error(error.message);
+  }
+}
+
 
 const Navbar04Page = async () => {
  
@@ -21,9 +37,10 @@ const Navbar04Page = async () => {
     //     refetch //refetch the session
     // } = authClient.useSession() 
 
-const { data: session, error } = await authClient.getSession()
+  //const { data: session, error } = await authClient.getSession()
+  const session = getSession()
+  console.log("coucou", session)
 
-  console.log(session, error)
 
   return (
     <div className="min-h-screen bg-muted">

@@ -1,4 +1,5 @@
 import { betterAuth } from "better-auth";
+import { openAPI  } from "better-auth/plugins";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 
 import { MongoClient } from 'mongodb';
@@ -9,6 +10,9 @@ const db = client.db();
 export const auth = betterAuth({
     database: mongodbAdapter(db),
     trustedOrigins: ["http://localhost:5000", "http://localhost:4321"],
+    plugins: [
+        openAPI(),
+    ],
     user: {
         modelName: "user",
     },
@@ -22,6 +26,7 @@ export const auth = betterAuth({
         modelName: "user_verification",
     },
     emailAndPassword: {  
-        enabled: true
+        enabled: true,
+        autoSignIn:true,
     }
 });
