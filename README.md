@@ -4,5 +4,5 @@ Dans ce projet, je souhaite créer une interface pour suivre le prix de revient 
 
 ## Stack
 
-API ( NodeJS / Express )\
-Interface graphique ( React / Typescript )
+API ( NodeJS / Express / BetterAuth )\
+Interface graphique ( React / Typescript / Astro )
