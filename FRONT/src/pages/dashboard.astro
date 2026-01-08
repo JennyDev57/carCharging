@@ -1,22 +1,18 @@
 ---
+export const prerender = false;
+
 import "../styles/global.css";
 
 import Layout from "@/layouts/Layout.astro";
-import  Navbar04Page from "../components/navbar-04/navbar-04.tsx"
+import  Navbar04Page from "../components/navbar-04/navbar-04"
 
 
-// const session = () => {
-//     if (Astro.locals.session) {
-//         return Astro.locals.session;
-//     } else {
-//         // Redirect to login page if the user is not authenticated
-//         return Astro.redirect("/login");
-//     }
-// }
-
+console.log('dashboard user id:', Astro.locals.user?.id);
+if (!Astro.locals.user?.id) return Astro.redirect('/login')
 
 ---
 
+
 <Layout>
-	<Navbar04Page />
+	<Navbar04Page initialSession={Astro.locals.user.id}/>
 </Layout>

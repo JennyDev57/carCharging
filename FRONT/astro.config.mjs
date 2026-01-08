@@ -6,9 +6,16 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  server: { host: true },
+  server: { 
+    host: true,
+    // @ts-ignore
+    proxy: {
+      "/auth": "http://localhost:5000"
+    }
+  },
 
   vite: {
+      // @ts-ignore
       plugins: [tailwindcss()],
 	},
 

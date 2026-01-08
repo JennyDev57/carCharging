@@ -65,13 +65,16 @@ export async function startServer() {
     const app = express(); 
     app.use(cors({
         origin: "http://localhost:4321", // Replace with your frontend's origin
-        methods: ["GET", "POST", "PUT", "DELETE"], // Specify allowed HTTP methods
+        allowedHeaders: ["Content-Type", "Authorization"],
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Specify allowed HTTP methods
+        exposedHeaders: ["Content-Length"],
         credentials: true, // Allow credentials (cookies, authorization headers, etc.)
     }));
     app.use(cookieParser());
 
     // Better-Auth route    
     app.all("/api/auth/*", toNodeHandler(auth));
+    app.all("/api/auth/**", toNodeHandler(auth));
     app.get("/api/me", async (req, res) => {
       const session = await auth.api.getSession({
           headers: fromNodeHeaders(req.headers),

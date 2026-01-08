@@ -18,6 +18,7 @@ export function LoginForm({
         e.preventDefault()
         try {
             const requestBody = {email, password}
+            console.log('Login requestBody:', requestBody);
             const { data, error } = await authClient.signIn.email({
               email,
               password,

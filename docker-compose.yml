@@ -18,7 +18,7 @@ services:
         - API:/usr/src/app
       ports:
         - 5000:5000
-      command: pnpm run dev
+      command: npm run dev
       depends_on:
         - mongodb
   front:
@@ -32,6 +32,8 @@ services:
         - astro_node_modules:/app/node_modules
       ports:
         - 4321:4321
+      environment:
+        - API_URL=http://api:5000
       command: npm run dev 
 volumes:
   mongo_db_data:
