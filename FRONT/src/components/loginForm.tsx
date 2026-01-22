@@ -25,7 +25,7 @@ export function LoginForm({
               callbackURL: "/dashboard",
             }, {
               onRequest:(ctx: any) => {
-
+                console.log(requestBody.email + ' ' + requestBody.password);
               },
               onSuccess:(ctx: any) => {
                 navigate('/dashboard')
@@ -35,8 +35,7 @@ export function LoginForm({
               }
             })
         } catch (error) {
-            console.log(error);
-            
+            console.log(error);            
         }
     }
 

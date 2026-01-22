@@ -6,8 +6,6 @@ import "../styles/global.css";
 import Layout from "@/layouts/Layout.astro";
 import  Navbar04Page from "../components/navbar-04/navbar-04"
 
-
-console.log('dashboard user id:', Astro.locals.user?.id);
 if (!Astro.locals.user?.id) return Astro.redirect('/login')
 
 ---

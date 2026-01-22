@@ -1,22 +1,34 @@
 import { defineMiddleware } from  'astro:middleware' ; 
-import { createAuthClient } from  'better-auth/client' ;
+import { serverAuthClient } from '@/lib/auth-client';
 
 export const onRequest = defineMiddleware(async (context: any, next: any ) => { 
-    const API_URL = process.env.API_URL || "http://localhost:5000/";
-    console.log('Auth baseURL', API_URL);
-    const authClient = createAuthClient ({ 
-        baseURL : API_URL,
-        fetchOptions: { credentials: 'include' }
-    }) 
+    // Ignore API calls to avoid infinite loop
+    if (context.url.pathname.startsWith('/api')) {
+        return next();
+    }
 
-    const { data: session } = await authClient.getSession({
-        fetchOptions: {
-            headers: context.request.headers, 
-        }
-    })
-    context.locals.user = session?.user || null;
-    context.locals.session = session?.session || null;
+    console.log('Middleware triggered for:', context.url.pathname);
+    try {
+        // Pass the cookies from the request to the auth client
+        const cookieHeader = context.request.headers.get('cookie');
+        const { data: session } = await serverAuthClient.getSession({
+            fetchOptions: {
+                headers: {
+                    cookie: cookieHeader || '',
+                },
+            },
+        });
+        //console.log('Middleware session:', session);
+        context.locals.user = session?.user || null;
+        context.locals.session = session?.session || null;
+    } catch (error) {
+        console.log('Session fetch error:', error);
+        context.locals.user = null;
+        context.locals.session = null;
+    }
    
+    //console.log('Context locals after middleware:', context.locals);
+
     return next() 
 })
 

@@ -10,7 +10,7 @@ export default defineConfig({
     host: true,
     // @ts-ignore
     proxy: {
-      "/auth": "http://localhost:5000"
+      "/api": "http://api:5000"
     }
   },
 

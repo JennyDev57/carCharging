@@ -9,6 +9,8 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: N6QmF7kSNGLq
     volumes:
       - mongo_db_data:/data/db
+    networks:
+      - car-charging-network
   api:
       container_name: api
       build: ./API
@@ -21,6 +23,8 @@ services:
       command: npm run dev
       depends_on:
         - mongodb
+      networks:
+        - car-charging-network
   front:
       container_name: front
       build: ./FRONT
@@ -28,19 +32,25 @@ services:
       depends_on:
         - api
       volumes:
-        #- ./FRONT:/usr/src/app
+        - ./FRONT:/usr/src/app
         - astro_node_modules:/app/node_modules
       ports:
         - 4321:4321
       environment:
-        - API_URL=http://api:5000
-      command: npm run dev 
+        - PUBLIC_API_URL=http://localhost:5000
+      command: npm run dev
+      networks:
+        - car-charging-network 
 volumes:
   mongo_db_data:
     driver: local
   API:
   FRONT:
   astro_node_modules:
+
+networks:
+  car-charging-network:
+    driver: bridge
   
   
   #podman-compose down && podman rmi --all && podman-compose up -d --build --no-cache && podman-compose logs -f

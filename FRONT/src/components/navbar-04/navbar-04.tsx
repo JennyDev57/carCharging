@@ -7,13 +7,12 @@ import { navigate } from "astro:transitions/client";
 
 
 async function signOut() {
+  console.log('Signing out user...');
   await authClient.signOut();
   navigate('/login')
 }
 
 const Navbar04Page = async (initialSession: any) => {
- 
-  console.log('Navbar initialSession:', initialSession);
   
   return (
     <div className="min-h-screen bg-muted">
