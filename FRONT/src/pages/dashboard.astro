@@ -4,13 +4,12 @@ export const prerender = false;
 import "../styles/global.css";
 
 import Layout from "@/layouts/Layout.astro";
-import  Navbar04Page from "../components/navbar-04/navbar-04"
+import Navbar from "@/components/navbar/navbar";
 
 if (!Astro.locals.user?.id) return Astro.redirect('/login')
 
 ---
 
-
 <Layout>
-	<Navbar04Page initialSession={Astro.locals.user.id}/>
+	<Navbar client:only="react" initialSession={Astro.locals.user.id}/>
 </Layout>
